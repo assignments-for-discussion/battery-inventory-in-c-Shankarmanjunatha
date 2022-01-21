@@ -5,7 +5,7 @@ struct CountsByUsage {
   int lowCount;
   int mediumCount;
   int highCount;
-};
+}
 
 struct CountsByUsage countBatteriesByUsage(const int* cycles, int nBatteries) {
   struct CountsByUsage counts = {0, 0, 0};
@@ -19,7 +19,7 @@ void testBucketingByNumberOfCycles() {
   struct CountsByUsage counts = countBatteriesByUsage(chargeCycleCounts, numberOfBatteries);
   assert(counts.lowCount <= 400);
   assert(counts.mediumCount <= 919);
-  assert(counts.highCount >= 920);
+  assert(counts.highCount == 920);
   printf("Done counting :)\n");
 }
 
